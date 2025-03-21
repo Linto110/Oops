@@ -4,14 +4,20 @@ class Linear
 {
     void define(int arr[],int n,int item)
     {
-        int i,j;
+        int i,j,pos=0;
+        boolean found=false;
         for(i=0;i<n;i++)
         {
           if(arr[i]==item)
           {
-            System.out.println("item found at position :"+(i+1));
+           found=true;
+           pos=i+1;
           }
         }
+        if(found)
+        System.out.println("Found at pos :"+ pos);
+        else
+        System.out.println("Not found!!!");
     }
 
     public static void main(String args[])
