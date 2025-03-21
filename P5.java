@@ -7,9 +7,13 @@ class Linear
         int i,j;
         for(i=0;i<n;i++)
         {
-          if(arr[i]==item)n=sc.nex
+          if(arr[i]==item)
+          {
+            System.out.println("item found at position :"+(i+1));
           }
         }
+    }
+
     public static void main(String args[])
     {
         int n,item,i;
