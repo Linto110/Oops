@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 class Binary
 {
-    void bSearch(int arr[],int l,int r,int item)
+    void bSearch(int arr[],int l,int r,int item) 
     {
         int m=(l+r)/2;
         if (l > r) {
