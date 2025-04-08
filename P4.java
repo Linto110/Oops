@@ -1,82 +1,60 @@
+
 import java.util.Scanner;
 import java.util.Arrays;
-class StrAray
+
+class Stringsrt
 {
-  void userDefine(String str[],int n)
-  {
-    int i,j;
-    String temp;
-    for(i=0;i<n;i++)
+    static void udf(String arr[],int length)
     {
-        for(j=i+1;j<n;j++)
+        int i,j;
+        for(i=0;i<length;i++)
         {
-            if(str[i].compareTo(str[j])>0)
+            for(j=i+1;j<length;j++)
             {
-                temp=str[i];
-                str[i]=str[j];
-                str[j]=temp;
+                if(arr[i].compareTo(arr[j])>0)
+                {
+                    String temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
             }
         }
     }
-    System.out.print("The strings sorted with user-defined function : ");
-    for(i=0;i<n;i++)
+    public static void main(String[] args)
     {
-        System.out.print(str[i]+" ");
-    }
-    System.out.println();
-  }
-
-  public static void main(String args[])
-  {
-    int option,num,i,j;
-    
-    Scanner sc=new Scanner(System.in);
-    do
-    {
-    StrAray d = new StrAray();
-    System.out.println("1.User defined");
-    System.out.println("2.Built in");
-    System.out.println("3.Exit");
-    System.out.print("Enter your choice : ");
-    option=sc.nextInt();
-          if (option == 3) {
-                System.exit(0);
-            }
-    System.out.print("Enter the number of strings :");
-    option=sc.nextInt();
-    num=sc.nextInt();
-    String[] strings = new String[num];   
-        switch(option)
+        String[] arr = new String[0];
+        int len = 0,i;
+        Scanner sc = new Scanner(System.in);
+        
+        while(true)
         {
-            case 1:
-                System.out.println("Enter the strings :");
-                for(i=0;i<num;i++)
-                {
-                    strings[i]=sc.next();
-                }
-                d.userDefine(strings,num);
-                break;
-            case 2:
-                System.out.println("Enter the strings :");
-                for(i=0;i<num;i++)
-                {
-                    strings[i]=sc.next();
-                }
-                Arrays.sort(strings);
-                System.out.println("The strings sorted with built-in function :");
-                for(i=0;i<num;i++)
-                {
-                    System.out.print(strings[i]+" ");
-                }
-                System.out.println();
-                break;
-                default:
-                    System.out.println("Enter valid number.");
+            System.out.println("1. Insert to array\n2. user defined sort\t3. inbuilt sort");
+            System.out.println("4. Exit");
+            System.out.print("Enter the choice: ");
+            int choice = sc.nextInt();
+            switch(choice)
+            {
+                case 1: System.out.print("Enter the no.of strings: ");
+                        len = sc.nextInt();
+                        arr = new String[len];
+
+                        System.out.print("Enter the strings: ");
+                        for(i=0;i<len;i++)
+                        arr[i] = sc.next();
+                        break;
+                case 2: udf(arr,len);
+                        System.out.println("\n"+Arrays.toString(arr)+"\n");
+                        break;
+                
+                case 3: Arrays.sort(arr);
+                        System.out.println("\n"+Arrays.toString(arr)+"\n");
+                        break;
+                
+                case 4: System.exit(0);
+                
+                default: System.out.println("Invalid choice");
+                
+            }
         }
-    }while(true);
-  }
+    }
 }
-
-    
-   
-
