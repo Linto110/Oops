@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+class Employee {
+    int Empid, Salary;
+    String Address, Name;
+
+    Employee(int empid, int salary, String name, String address) {
+        Empid = empid;
+        Salary = salary;
+        Address = address;
+        Name = name;
+    }
+}
+
+class Teacher extends Employee {
+    String Department, Subject;
+
+    Teacher(int empid, int salary, String name, String address, String department, String subject) {
+        super(empid, salary, name, address);
+        Department = department;
+        Subject = subject;
+    }
+
+    void display() {
+        System.out.println("\nEmployee ID: " + Empid);
+        System.out.println("Employee Salary: " + Salary);
+        System.out.println("Employee Name: " + Name);
+        System.out.println("Employee Address: " + Address);
+        System.out.println("Department: " + Department);
+        System.out.println("Subject: " + Subject);
+    }
+}
+
+class Read {
+    public static void main(String args[]) {
+        int n, empid, salary, i;
+        String subject, department, address, name;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of Records:");
+        n = sc.nextInt();
+        Teacher[] arr = new Teacher[n];
+        for (i = 0; i < n; i++) {
+            System.out.println("\nEnter Employee Record " + (i + 1) + ":");
+            System.out.print("\nEnter Employee ID:");
+            empid = sc.nextInt();
+            System.out.print("Enter Employee Salary:");
+            salary = sc.nextInt();
+            System.out.print("Enter Employee Name:");
+            name = sc.next();
+            System.out.print("Enter Employee Address:");
+            address = sc.next();
+            System.out.print("Enter Employee Department:");
+            department = sc.next();
+            System.out.print("Enter Employee Subject:");
+            subject = sc.next();
+            arr[i] = new Teacher(empid, salary, name, address, department, subject);
+        }
+        System.out.println("\nThe Employee Records\n____________________");
+        for (i = 0; i < n; i++) {
+            System.out.println("\nEmployee Record " + (i + 1) + " :");
+            arr[i].display();
+        }
+    }
+}
