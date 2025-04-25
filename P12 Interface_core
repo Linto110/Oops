@@ -1,0 +1,35 @@
+import java.util.Scanner;
+interface Student{
+    void getAcademicScore();
+}
+interface Sports{
+void getSportsScore();
+}
+class Result implements Student,Sports{
+Scanner sc=new Scanner(System.in);
+int academicScore,sportsScore;
+public void getAcademicScore(){
+    System.out.print("Enter your academic score:");
+    academicScore=sc.nextInt();
+}
+public void getSportsScore(){
+    System.out.print("Enter your sports score:");
+    sportsScore=sc.nextInt();   
+}
+void display(){
+    getAcademicScore();
+    getSportsScore();
+    System.out.print("Academic SCore : "+academicScore);
+    System.out.print("\nSports SCore : "+sportsScore +"\n");
+}
+
+}
+class readScore
+{
+public static void main(String args[])
+
+    {
+        Result r=new Result();
+        r.display();
+    }
+}
