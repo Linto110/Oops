@@ -1,7 +1,7 @@
 import java.util.Scanner;
 class Publisher 
 {
-String Publisher
+String Publisher;
 void display()
 {
 System.out.println("Publisher: " + publisher);
@@ -54,15 +54,13 @@ public class bookDetails {
             price = sc.nextInt();
             System.out.print("Enter Author: ");
             author = sc.next();
-            System.out.print("Enter Genre: ");
-            genre = sc.next();
             if (choice == 1) {
                 Literature lit = new Literature();
                 lit.publisher = publisher;
                 lit.title = title;
                 lit.price = price;
                 lit.author = author;
-                lit.genre = genre;
+                lit.genre = 'Literature';
                 System.out.println("\n***Literature Book Details***");
                 lit.display();
             } else if (choice == 2) {
@@ -71,7 +69,7 @@ public class bookDetails {
                 fic.title = title;
                 fic.price = price;
                 fic.author = author;
-                fic.genre = genre;
+                fic.genre = 'Fiction';
                 System.out.println("\n***Fiction Book Details***");
                 fic.display();
             }   
