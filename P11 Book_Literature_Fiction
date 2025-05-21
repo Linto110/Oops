@@ -1,13 +1,19 @@
 import java.util.Scanner;
-
+class Publisher 
+{
+String Publisher
+void display()
+{
+System.out.println("Publisher: " + publisher);
+}
+}
 class Book {
-    String publisher;
     String title;
     int price;
     String author;
     
     void display() {
-        System.out.println("Publisher: " + publisher);
+        super.display();
         System.out.println("Title: " + title);
         System.out.println("Price: " + price);
         System.out.println("Author: " + author);
